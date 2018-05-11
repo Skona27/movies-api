@@ -20,6 +20,21 @@ class Api extends Controller {
             else $this->model->findAll();     
         }
 
+        if(Request::method("POST")) {
+            if(Input::exists()) {
+                $movie = [
+                    'title' => Input::get("title"),
+                    'description' => Input::get("description"),
+                    'year' => Input::get("year"),
+                    'director' => Input::get("director"),
+                    'language' => Input::get("language"),
+                    'length' => Input::get("length"),
+                    'rate' => Input::get("rate")
+                ];           
+                $this->model->create($movie);
+            }           
+        }
+
         if(Request::method("DELETE")) {
             if(Request::params($id)) {
                 $this->model->delete($id); 

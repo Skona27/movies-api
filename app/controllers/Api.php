@@ -31,6 +31,7 @@ class Api extends Controller {
                     'length' => Input::get("length"),
                     'rate' => Input::get("rate")
                 ];
+                
                 $this->model->create($movie);
             }           
         }

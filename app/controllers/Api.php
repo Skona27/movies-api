@@ -21,7 +21,18 @@ class Api extends Controller {
         }
 
         if(Request::method("POST")) {
-            echo json_encode("{title: Działa, status: 200}");
+            if(Input::exists()) {
+                $movie = [
+                    'title' => Input::get("title"),
+                    'description' => Input::get("description"),
+                    'year' => Input::get("year"),
+                    'director' => Input::get("director"),
+                    'language' => Input::get("language"),
+                    'length' => Input::get("length"),
+                    'rate' => Input::get("rate")
+                ];
+                $this->model->create($movie);
+            }           
         }
     }
 }

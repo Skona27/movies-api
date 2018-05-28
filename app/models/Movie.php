@@ -51,4 +51,20 @@ class Movie extends Model {
             ['id' => $id]
         );
     }
+
+    public function update($movie) {
+        $update = Database::instance()->query(
+            'UPDATE movies SET (:title, :description, :year, :director, :language, :length, :rate) WHERE id=6', [
+            'title' => $movie["title"],
+            'description' => $movie["description"],
+            'year' => $movie["year"],
+            'director' => $movie["director"],
+            'language' => $movie["language"],
+            'length' => $movie["length"],
+            'rate' => $movie["rate"]
+        ]);
+
+        if(!$insert->error()) echo "OK";
+        else echo "PUPA";
+    }
 }

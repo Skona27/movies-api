@@ -19,7 +19,7 @@ define('URL', 'http://localhost/movies-api');
 // Database params
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', 'root');
+define('DB_PASS', '');
 define('DB_NAME', 'movies-api');
 
 // Start session

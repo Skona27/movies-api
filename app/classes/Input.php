@@ -16,6 +16,9 @@ class Input {
 			case "GET":
 				return (!empty($_GET)) ? true : false;
 				break;
+			case "PUT":
+				return (!empty($_PUT)) ? true : false;
+				break;
 			case "FILES":
 				return (!empty($_FILES)) ? true : false;
 				break;
@@ -33,6 +36,11 @@ class Input {
 		else if(isset($_GET[$item])) {
 			return self::sanitize($_GET[$item]);
 		}
+
+		else if(isset($_PUT[$item])) {
+			return self::sanitize($_PUT[$item]);
+		}
+
 		else if(isset($_FILES[$item])) {
 			return $_FILES[$item];
 		}

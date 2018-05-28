@@ -65,6 +65,6 @@ class Movie extends Model {
         ]);
 
         if(!$insert->error()) echo "OK";
-        else echo "PUPA";
+        else echo "Error";
     }
 }
